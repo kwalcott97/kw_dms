@@ -53,7 +53,7 @@ func_scores:
     global_epistasis_params: *global_epistasis_params
   LibB-231017-C7_bio2-1:
     post_selection_sample: LibB-231017-C7_bio2-1
-    pre_selection_sample: LibB-231017-DMSO_bio2_-1
+    pre_selection_sample: LibB-231017-DMSO_bio2-1
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
   LibB-231017-4u8c_bio1-1:
