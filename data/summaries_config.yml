@@ -21,8 +21,6 @@ summary:
       le_filters:  # only keep entries with indicated column is <= indicated value
         escape_std: 2
       antibody_list:  # antibodies to include: keys name used for `avg_escape`, values name for plot
-        S2M11: S2M-11
-        REGN10933: REGN10933
   func_effects:  # effects of mutations on function
     spike mediated entry:  # name of functional selection
       condition: 293T_ACE2_entry  # condition specified in `avg_func_effects`
