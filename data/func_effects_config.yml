@@ -15,12 +15,12 @@ func_scores_params_default: &func_scores_params_default
   min_wt_frac: 0.001  # error if not at least this fraction of counts for wildtype
   # `min_pre_selection_count` and `min_pre_selection_frac` drop variants with low counts
   # or frequencies that may not have sufficient statistics for good estimates.
-  min_pre_selection_count: 10  # drop variants < this many pre-selection counts
+  min_pre_selection_count: 25  # drop variants < this many pre-selection counts
   # !!! Make min_pre_selection_frac LARGER for larger libraries, such 0.1 / (library size) !!!
-  min_pre_selection_frac: 0.00005  # drop variants that are < this fraction of all counts
+  min_pre_selection_frac: 0.000002  # drop variants that are < this fraction of all counts
 
 # Define default parameters for fitting global epistasis models to each
-# individual selection to get mutationo effects.
+# individual selection to get mutation effects.
 global_epistasis_params: &global_epistasis_params
   # How to clip functional scores at upper / lower bounds. Allowable values:
   #  - median_stop: median func score of all variants with stop codons
@@ -41,46 +41,87 @@ global_epistasis_params: &global_epistasis_params
 #  - `func_score_params`: parameters for computing functional scores
 #  - `global_epistasis_params`: parameters for fitting global epistasis model
 func_scores:
-  LibB-231017-C7_bio1-1:
+  DMSO_bio1-1_C7_bio1-1:
     post_selection_sample: LibB-231017-C7_bio1-1
     pre_selection_sample: LibB-231017-DMSO_bio1-1
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  LibB-231017-C7_bio1-2:
+  DMSO_bio1-1_C7_bio1-2:
+    post_selection_sample: LibB-231017-C7_bio1-2
+    pre_selection_sample: LibB-231017-DMSO_bio1-1
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  DMSO_bio1-2_C7_bio1-1:
+    post_selection_sample: LibB-231017-C7_bio1-1
+    pre_selection_sample: LibB-231017-DMSO_bio1-2
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  DMSO_bio1-2_C7_bio1-2:
     post_selection_sample: LibB-231017-C7_bio1-2
     pre_selection_sample: LibB-231017-DMSO_bio1-2
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  LibB-231017-C7_bio2-1:
+  DMSO_bio2-1_C7_bio2-1:
     post_selection_sample: LibB-231017-C7_bio2-1
     pre_selection_sample: LibB-231017-DMSO_bio2-1
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  LibB-231017-4u8c_bio1-1:
+  DMSO_bio2-2_C7_bio2-1:
+    post_selection_sample: LibB-231017-C7_bio2-1
+    pre_selection_sample: LibB-231017-DMSO_bio2-2
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  DMSO_bio1-1_4u8c_bio1-1:
     post_selection_sample: LibB-231017-4u8c_bio1-1
     pre_selection_sample: LibB-231017-DMSO_bio1-1
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  LibB-231017-4u8c_bio2-1:
+  DMSO_bio1-2_4u8c_bio1-1:
+    post_selection_sample: LibB-231017-4u8c_bio1-1
+    pre_selection_sample: LibB-231017-DMSO_bio1-2
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  DMSO_bio2-1_4u8c_bio2-1:
     post_selection_sample: LibB-231017-4u8c_bio2-1
     pre_selection_sample: LibB-231017-DMSO_bio2-1
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  LibB-231017-4u8c_bio2-2:
+  DMSO_bio2-1_4u8c_bio2-2:
+    post_selection_sample: LibB-231017-4u8c_bio2-2
+    pre_selection_sample: LibB-231017-DMSO_bio2-1
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  DMSO_bio2-2_4u8c_bio2-1:
+    post_selection_sample: LibB-231017-4u8c_bio2-1
+    pre_selection_sample: LibB-231017-DMSO_bio2-2
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  DMSO_bio2-2_4u8c_bio2-2:
     post_selection_sample: LibB-231017-4u8c_bio2-2
     pre_selection_sample: LibB-231017-DMSO_bio2-2
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  LibB-231017-Both_bio1-1:
+  DMSO_bio1-1_Both_bio1-1:
     post_selection_sample: LibB-231017-Both_bio1-1
     pre_selection_sample: LibB-231017-DMSO_bio1-1
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  LibB-231017-Both_bio2-1:
+  DMSO_bio1-2_Both_bio1-1:
+    post_selection_sample: LibB-231017-Both_bio1-1
+    pre_selection_sample: LibB-231017-DMSO_bio1-2
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  DMSO_bio2-1_Both_bio2-1:
     post_selection_sample: LibB-231017-Both_bio2-1
     pre_selection_sample: LibB-231017-DMSO_bio2-1
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
+  DMSO_bio2-2_Both_bio2-1:
+    post_selection_sample: LibB-231017-Both_bio2-1
+    pre_selection_sample: LibB-231017-DMSO_bio2-2
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  
 
 # --------------------------------------------------------------------------------------
 # Configuration for averaging mutation functional effects across selections and plotting
@@ -101,11 +142,11 @@ func_scores:
 avg_func_effects_default: &avg_func_effects_default
   avg_method: median
   per_selection_tooltips: true
-  floor_for_effect_std: -3
+  floor_for_effect_std: -2.5
   plot_kwargs:
     addtl_slider_stats:
       times_seen: 3
-      effect_std: 2
+      effect_std: 1.6
     addtl_slider_stats_as_max: [effect_std]
     heatmap_max_at_least: 1
     heatmap_min_at_least: -1
@@ -141,26 +182,46 @@ avg_func_effects_default: &avg_func_effects_default
 
 # Define the functional effect conditions to average
 avg_func_effects:
-  Ceapin_A7_effect:
+  Ceapin_biorep1_DMSO_biorep1:
     <<: *avg_func_effects_default
-    title: Mutation effects on particle generation in the presence of Ceapin A7
+    title:
     selections:
-      - LibB-231017-C7_bio1-1
-      - LibB-231017-C7_bio1-2
-      - LibB-231017-C7_bio2-1
-  4u8c_effect:
+      - DMSO_bio1-1_C7_bio1-1
+      - DMSO_bio1-1_C7_bio1-2
+      - DMSO_bio1-2_C7_bio1-1
+      - DMSO_bio1-2_C7_bio1-2
+  Ceapin_biorep2_DMSO_biorep2:
     <<: *avg_func_effects_default
-    title: Mutation effects on particle generation in the presence of 4u8c
+    title:
     selections:
-      - LibB-231017-4u8c_bio1-1
-      - LibB-231017-4u8c_bio2-1
-      - LibB-231017-4u8c_bio2-2
-  Ceapin_A7_and_4u8c_effect:
+      - DMSO_bio2-1_C7_bio2-1
+      - DMSO_bio2-2_C7_bio2-1
+  4u8c_biorep1_DMSO_biorep1:
     <<: *avg_func_effects_default
-    title: Mutation effects on particle generation in the presence of Ceapin A7 and 4u8c
+    title:
     selections:
-      - LibB-231017-Both_bio1-1
-      - LibB-231017-Both_bio2-1
+      - DMSO_bio1-1_4u8c_bio1-1
+      - DMSO_bio1-2_4u8c_bio1-1
+  4u8c_biorep2_DMSO_biorep2:
+    <<: *avg_func_effects_default
+    title:
+    selections:
+      - DMSO_bio2-1_4u8c_bio2-1
+      - DMSO_bio2-1_4u8c_bio2-2
+      - DMSO_bio2-2_4u8c_bio2-1
+      - DMSO_bio2-2_4u8c_bio2-2
+ Both_biorep1_DMSO_biorep1:
+    <<: *avg_func_effects_default
+    title:
+    selections:
+      - DMSO_bio1-1_Both_bio1-1
+      - DMSO_bio1-2_Both_bio1-1
+ Both_biorep2_DMSO_biorep2:
+    <<: *avg_func_effects_default
+    title:
+    selections:
+      - DMSO_bio2-1_Both_bio2-1
+      - DMSO_bio2-2_Both_bio2-1
 
 # --------------------------------------------------------------------------------------
 # Configuration for func effect shifts from `multidms` models comparing conditions.
@@ -197,34 +258,34 @@ func_effect_shifts_default: &func_effect_shifts_default
 func_effect_shifts:
  Ceapin_techrep_comparison:
   <<: *func_effect_shifts_default
-  reference: Ceapin_A7_tech
+  reference: Ceapin_A7_tech1
   conditions:
-    techrep1: LibB-231017-C7_bio1-1
-    techrep2: LibB-231017-C7_bio1-2
+    Ceapin_A7_tech1: LibB-231017-C7_bio1-1
+    Ceapin_A7_tech2: LibB-231017-C7_bio1-2
  Ceapin_biorep_comparison:
   <<: *func_effect_shifts_default
-  reference: Ceapin_A7_bio
+  reference: Ceapin_A7_bio1
   conditions:
-    biorep1: LibB-231017-C7_bio1-1
-    biorep2: LibB-231017-C7_bio2-1
+    Ceapin_A7_bio1: LibB-231017-C7_bio1-1
+    Ceapin_A7_bio2: LibB-231017-C7_bio2-1
  4u8c_techrep_comparison:
   <<: *func_effect_shifts_default
-  reference: Ceapin_A7_tech
+  reference: 4u8c_tech1
   conditions:
-    techrep1: LibB-231017-4u8c_bio2-1
-    techrep2: LibB-231017-4u8c_bio2-2
+    4u8c_tech1: LibB-231017-4u8c_bio2-1
+    4u8c_tech2: LibB-231017-4u8c_bio2-2
  4u8c_biorep_comparison:
   <<: *func_effect_shifts_default
-  reference: Ceapin_A7_tech
+  reference: 4u8c_bio1
   conditions:
-    biorep1: LibB-231017-4u8c_bio1-1
-    biorep2: LibB-231017-4u8c_bio2-1
+    4u8c_bio1: LibB-231017-4u8c_bio1-1
+    4u8c_bio2: LibB-231017-4u8c_bio2-1
  Ceapin_and_4u8c_biorep_comparison:
   <<: *func_effect_shifts_default
-  reference: Ceapin_A7_tech
+  reference: both_tech1
   conditions:
-    biorep1: LibB-231017-Both_bio1-1
-    biorep2: LibB-231017-Both_bio2-1
+    both_tech1: LibB-231017-Both_bio1-1
+    both_tech2: LibB-231017-Both_bio2-1
 
 # --------------------------------------------------------------------------------------
 # Configuration for averaging func effect shifts from multiple comparisons.
@@ -279,14 +340,4 @@ avg_func_effect_shifts_default: &avg_func_effect_shifts_default
     (*minimum n_comparisons*), what site summary statistic to show, etc.
 
 # Define the functional effect conditions to average
-avg_func_effect_shifts:
-  UPR_inhibition_effects_compared:
-    <<: *avg_func_effect_shifts_default
-    title: Comparison of functional effects from different UPR inhibitors
-    comparisons:
-      - Ceapin_techrep_comparison
-      - Ceapin_biorep_comparison
-      - 4u8c_techrep_comparison
-      - 4u8c_biorep_comparison
-      - Ceapin_and_4u8c_biorep_comparison
-    lasso_shift: 0.0001
+avg_func_effect_shifts: null
