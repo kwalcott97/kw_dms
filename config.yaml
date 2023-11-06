@@ -15,11 +15,11 @@ docs: docs  # typically will be `docs` for real pipelines
 # ----------------------------------------------------------------------------
 
 # Name of your main GitHub repo, eg https://github.com/<my_organization>/<my_repo>
-github_repo_url: https://github.com/kwalcott97/SARS-CoV-2_Omicron_BA.1_spike_DMS_UPR_pertubation
+github_repo_url: https://github.com/kwalcott97/kw_dms
 # GitHub blob path to where results files are stored. Typically "{repo}/blob/{branch}",
 # the "test_example" below is specific to this test example being within the pipeline
 # and should not be needed for other pipelines.
-github_blob_url: https://github.com/kwalcott97/SARS-CoV-2_Omicron_BA.1_spike_DMS_UPR_pertubation/blob/main
+github_blob_url: https://github.com/kwalcott97/kw_dms/blob/main
 # Some descriptions and metadata about the analysis.
 description: Deep mutational scanning of SARS-CoV-2 BA.1 spike using a barcoded lentiviral platform in the presence of UPR inhibitor Ceapin-A7
 year: 2023
@@ -69,10 +69,10 @@ prebuilt_geneseq: data/codon.fasta
 
 # Parameters for building variants from PacBio sequencing, only needed if
 # not using pre-built variants.
-pacbio_runs: data/PacBio_runs.csv  # PacBio sequencing data
-pacbio_amplicon: data/PacBio_amplicon.gb  # Genbank file with PacBio amplicon
-pacbio_amplicon_specs: data/PacBio_feature_parse_specs.yaml  # alignparse feature parsing
-variant_tags:  # variant tags in PacBio amplicon, or "null" if no tags
+pacbio_runs: null # PacBio sequencing data
+pacbio_amplicon: null # Genbank file with PacBio amplicon
+pacbio_amplicon_specs: null # alignparse feature parsing
+variant_tags: null # variant tags in PacBio amplicon, or "null" if no tags
   variant_tag5:
     variant_1: G
     variant_2: C
@@ -119,4 +119,4 @@ illumina_barcode_parser_params:
 
 func_effects_config: data/func_effects_config.yml  # Functional effects of mutations
 antibody_escape_config: null  # escape assays (eg, antibodies)
-summaries_config: null #data/summaries_config.yml  # Summaries across assays
+summaries_config: data/summaries_config.yml  # Summaries across assays
