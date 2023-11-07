@@ -1,0 +1,177 @@
+<h1 id="deep-mutational-scanning-of-sars-cov-2-ba1-spike-using-a-barcoded-lentiviral-platform-in-the-presence-of-upr-inhibitor-ceapin-a7">Deep mutational scanning of SARS-CoV-2 BA.1 spike using a barcoded lentiviral platform in the presence of UPR inhibitor Ceapin-A7</h1>
+<p>Analysis by Keith Walcott and Angela Phillips (2023)</p>
+<p>See <a href="https://github.com/kwalcott97/kw_dms">https://github.com/kwalcott97/kw_dms</a> for full code.</p>
+<div class="toc"><span class="toctitle">Contents</span><ul>
+<li><a href="#barcode-to-codon-variant-lookup-table">Barcode to codon-variant lookup table</a></li>
+<li><a href="#count-barcodes-for-variants">Count barcodes for variants</a></li>
+<li><a href="#functional-effects-of-mutations">Functional effects of mutations</a></li>
+</ul>
+</div>
+<h2 id="barcode-to-codon-variant-lookup-table">Barcode to codon-variant lookup table</h2>
+<h4 id="data-files">Data files</h4>
+<ul>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/gene_sequence/codon.fasta">parental codon sequence</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/gene_sequence/protein.fasta">parental protein sequence</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/variants/codon_variants.csv">barcode to codon-variant lookup table</a></li>
+</ul>
+<h2 id="count-barcodes-for-variants">Count barcodes for variants</h2>
+<h4 id="analysis-notebooks">Analysis notebooks</h4>
+<ul>
+<li><a href="notebooks/analyze_variant_counts.html">Analysis of variant counts</a></li>
+</ul>
+<h4 id="data-files_1">Data files</h4>
+<ul>
+<li><details><summary>Barcode count CSVs (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/barcode_counts/LibB-231017-DMSO_bio1-1_counts.csv">LibB-231017-DMSO_bio1-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/barcode_counts/LibB-231017-DMSO_bio1-2_counts.csv">LibB-231017-DMSO_bio1-2</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/barcode_counts/LibB-231017-DMSO_bio2-1_counts.csv">LibB-231017-DMSO_bio2-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/barcode_counts/LibB-231017-DMSO_bio2-2_counts.csv">LibB-231017-DMSO_bio2-2</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/barcode_counts/LibB-231017-C7_bio1-1_counts.csv">LibB-231017-C7_bio1-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/barcode_counts/LibB-231017-C7_bio1-2_counts.csv">LibB-231017-C7_bio1-2</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/barcode_counts/LibB-231017-Spike_DMSO_bio1_1X-1_counts.csv">LibB-231017-Spike_DMSO_bio1_1X-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/barcode_counts/LibB-231017-Spike_DMSO_bio1_5X-1_counts.csv">LibB-231017-Spike_DMSO_bio1_5X-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/barcode_counts/LibB-231017-Spike_DMSO_bio1_10X-1_counts.csv">LibB-231017-Spike_DMSO_bio1_10X-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/barcode_counts/LibB-231017-Spike_DMSO_bio2_1X-1_counts.csv">LibB-231017-Spike_DMSO_bio2_1X-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/barcode_counts/LibB-231017-Spike_DMSO_bio2_5X-1_counts.csv">LibB-231017-Spike_DMSO_bio2_5X-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/barcode_counts/LibB-231017-Spike_DMSO_bio2_10X-1_counts.csv">LibB-231017-Spike_DMSO_bio2_10X-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/barcode_counts/LibB-231017-C7_bio2-1_counts.csv">LibB-231017-C7_bio2-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/barcode_counts/LibB-231017-4u8c_bio1-1_counts.csv">LibB-231017-4u8c_bio1-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/barcode_counts/LibB-231017-4u8c_bio2-1_counts.csv">LibB-231017-4u8c_bio2-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/barcode_counts/LibB-231017-4u8c_bio2-2_counts.csv">LibB-231017-4u8c_bio2-2</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/barcode_counts/LibB-231017-Both_bio1-1_counts.csv">LibB-231017-Both_bio1-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/barcode_counts/LibB-231017-Both_bio2-1_counts.csv">LibB-231017-Both_bio2-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/barcode_counts/LibB-231017-uninfected-1_counts.csv">LibB-231017-uninfected-1</a></li>
+</ul></details>
+
+</li>
+</ul>
+<h2 id="functional-effects-of-mutations">Functional effects of mutations</h2>
+<h4 id="final-summary-plots">Final summary plots</h4>
+<ul>
+<li><details><summary>Interactive plots of average mutation functional effects (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="htmls/Ceapin_biorep1_DMSO_biorep1_func_effects.html">Ceapin_biorep1_DMSO_biorep1</a></li>
+<li><a href="htmls/Ceapin_biorep2_DMSO_biorep2_func_effects.html">Ceapin_biorep2_DMSO_biorep2</a></li>
+<li><a href="htmls/4u8c_biorep1_DMSO_biorep1_func_effects.html">4u8c_biorep1_DMSO_biorep1</a></li>
+<li><a href="htmls/4u8c_biorep2_DMSO_biorep2_func_effects.html">4u8c_biorep2_DMSO_biorep2</a></li>
+<li><a href="htmls/Both_biorep1_DMSO_biorep1_func_effects.html">Both_biorep1_DMSO_biorep1</a></li>
+<li><a href="htmls/Both_biorep2_DMSO_biorep2_func_effects.html">Both_biorep2_DMSO_biorep2</a></li>
+</ul></details>
+
+</li>
+<li><details><summary>Interactive plots of average mutation latent-phenotype effects (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="htmls/Ceapin_biorep1_DMSO_biorep1_latent_effects.html">Ceapin_biorep1_DMSO_biorep1</a></li>
+<li><a href="htmls/Ceapin_biorep2_DMSO_biorep2_latent_effects.html">Ceapin_biorep2_DMSO_biorep2</a></li>
+<li><a href="htmls/4u8c_biorep1_DMSO_biorep1_latent_effects.html">4u8c_biorep1_DMSO_biorep1</a></li>
+<li><a href="htmls/4u8c_biorep2_DMSO_biorep2_latent_effects.html">4u8c_biorep2_DMSO_biorep2</a></li>
+<li><a href="htmls/Both_biorep1_DMSO_biorep1_latent_effects.html">Both_biorep1_DMSO_biorep1</a></li>
+<li><a href="htmls/Both_biorep2_DMSO_biorep2_latent_effects.html">Both_biorep2_DMSO_biorep2</a></li>
+</ul></details>
+
+</li>
+</ul>
+<h4 id="analysis-notebooks_1">Analysis notebooks</h4>
+<ul>
+<li><a href="notebooks/analyze_func_scores.html">Analysis of functional scores</a></li>
+<li><details><summary>Notebooks with per-selection global epistasis fitting (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="notebooks/func_effects_global_epistasis_LibB-231017-DMSO_bio1-1_C7_bio1-1.html">LibB-231017-DMSO_bio1-1_C7_bio1-1</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_LibB-231017-DMSO_bio1-1_C7_bio1-2.html">LibB-231017-DMSO_bio1-1_C7_bio1-2</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_LibB-231017-DMSO_bio1-2_C7_bio1-1.html">LibB-231017-DMSO_bio1-2_C7_bio1-1</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_LibB-231017-DMSO_bio1-2_C7_bio1-2.html">LibB-231017-DMSO_bio1-2_C7_bio1-2</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_LibB-231017-DMSO_bio2-1_C7_bio2-1.html">LibB-231017-DMSO_bio2-1_C7_bio2-1</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_LibB-231017-DMSO_bio2-2_C7_bio2-1.html">LibB-231017-DMSO_bio2-2_C7_bio2-1</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_LibB-231017-DMSO_bio1-1_4u8c_bio1-1.html">LibB-231017-DMSO_bio1-1_4u8c_bio1-1</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_LibB-231017-DMSO_bio1-2_4u8c_bio1-1.html">LibB-231017-DMSO_bio1-2_4u8c_bio1-1</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_LibB-231017-DMSO_bio2-1_4u8c_bio2-1.html">LibB-231017-DMSO_bio2-1_4u8c_bio2-1</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_LibB-231017-DMSO_bio2-1_4u8c_bio2-2.html">LibB-231017-DMSO_bio2-1_4u8c_bio2-2</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_LibB-231017-DMSO_bio2-2_4u8c_bio2-1.html">LibB-231017-DMSO_bio2-2_4u8c_bio2-1</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_LibB-231017-DMSO_bio2-2_4u8c_bio2-2.html">LibB-231017-DMSO_bio2-2_4u8c_bio2-2</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_LibB-231017-DMSO_bio1-1_Both_bio1-1.html">LibB-231017-DMSO_bio1-1_Both_bio1-1</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_LibB-231017-DMSO_bio1-2_Both_bio1-1.html">LibB-231017-DMSO_bio1-2_Both_bio1-1</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_LibB-231017-DMSO_bio2-1_Both_bio2-1.html">LibB-231017-DMSO_bio2-1_Both_bio2-1</a></li>
+<li><a href="notebooks/func_effects_global_epistasis_LibB-231017-DMSO_bio2-2_Both_bio2-1.html">LibB-231017-DMSO_bio2-2_Both_bio2-1</a></li>
+</ul></details>
+
+</li>
+<li><details><summary>Notebooks averaging mutation functional effects (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="notebooks/avg_func_effects_Ceapin_biorep1_DMSO_biorep1.html">Ceapin_biorep1_DMSO_biorep1</a></li>
+<li><a href="notebooks/avg_func_effects_Ceapin_biorep2_DMSO_biorep2.html">Ceapin_biorep2_DMSO_biorep2</a></li>
+<li><a href="notebooks/avg_func_effects_4u8c_biorep1_DMSO_biorep1.html">4u8c_biorep1_DMSO_biorep1</a></li>
+<li><a href="notebooks/avg_func_effects_4u8c_biorep2_DMSO_biorep2.html">4u8c_biorep2_DMSO_biorep2</a></li>
+<li><a href="notebooks/avg_func_effects_Both_biorep1_DMSO_biorep1.html">Both_biorep1_DMSO_biorep1</a></li>
+<li><a href="notebooks/avg_func_effects_Both_biorep2_DMSO_biorep2.html">Both_biorep2_DMSO_biorep2</a></li>
+</ul></details>
+
+</li>
+</ul>
+<h4 id="data-files_2">Data files</h4>
+<ul>
+<li><details><summary>Per-variant functional score CSVs (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_scores/LibB-231017-DMSO_bio1-1_C7_bio1-1_func_scores.csv">LibB-231017-DMSO_bio1-1_C7_bio1-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_scores/LibB-231017-DMSO_bio1-1_C7_bio1-2_func_scores.csv">LibB-231017-DMSO_bio1-1_C7_bio1-2</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_scores/LibB-231017-DMSO_bio1-2_C7_bio1-1_func_scores.csv">LibB-231017-DMSO_bio1-2_C7_bio1-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_scores/LibB-231017-DMSO_bio1-2_C7_bio1-2_func_scores.csv">LibB-231017-DMSO_bio1-2_C7_bio1-2</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_scores/LibB-231017-DMSO_bio2-1_C7_bio2-1_func_scores.csv">LibB-231017-DMSO_bio2-1_C7_bio2-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_scores/LibB-231017-DMSO_bio2-2_C7_bio2-1_func_scores.csv">LibB-231017-DMSO_bio2-2_C7_bio2-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_scores/LibB-231017-DMSO_bio1-1_4u8c_bio1-1_func_scores.csv">LibB-231017-DMSO_bio1-1_4u8c_bio1-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_scores/LibB-231017-DMSO_bio1-2_4u8c_bio1-1_func_scores.csv">LibB-231017-DMSO_bio1-2_4u8c_bio1-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_scores/LibB-231017-DMSO_bio2-1_4u8c_bio2-1_func_scores.csv">LibB-231017-DMSO_bio2-1_4u8c_bio2-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_scores/LibB-231017-DMSO_bio2-1_4u8c_bio2-2_func_scores.csv">LibB-231017-DMSO_bio2-1_4u8c_bio2-2</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_scores/LibB-231017-DMSO_bio2-2_4u8c_bio2-1_func_scores.csv">LibB-231017-DMSO_bio2-2_4u8c_bio2-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_scores/LibB-231017-DMSO_bio2-2_4u8c_bio2-2_func_scores.csv">LibB-231017-DMSO_bio2-2_4u8c_bio2-2</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_scores/LibB-231017-DMSO_bio1-1_Both_bio1-1_func_scores.csv">LibB-231017-DMSO_bio1-1_Both_bio1-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_scores/LibB-231017-DMSO_bio1-2_Both_bio1-1_func_scores.csv">LibB-231017-DMSO_bio1-2_Both_bio1-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_scores/LibB-231017-DMSO_bio2-1_Both_bio2-1_func_scores.csv">LibB-231017-DMSO_bio2-1_Both_bio2-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_scores/LibB-231017-DMSO_bio2-2_Both_bio2-1_func_scores.csv">LibB-231017-DMSO_bio2-2_Both_bio2-1</a></li>
+</ul></details>
+
+</li>
+<li><details><summary>Per-selection mutation functional effect CSVs (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_effects/by_selection/LibB-231017-DMSO_bio1-1_C7_bio1-1_func_effects.csv">LibB-231017-DMSO_bio1-1_C7_bio1-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_effects/by_selection/LibB-231017-DMSO_bio1-1_C7_bio1-2_func_effects.csv">LibB-231017-DMSO_bio1-1_C7_bio1-2</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_effects/by_selection/LibB-231017-DMSO_bio1-2_C7_bio1-1_func_effects.csv">LibB-231017-DMSO_bio1-2_C7_bio1-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_effects/by_selection/LibB-231017-DMSO_bio1-2_C7_bio1-2_func_effects.csv">LibB-231017-DMSO_bio1-2_C7_bio1-2</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_effects/by_selection/LibB-231017-DMSO_bio2-1_C7_bio2-1_func_effects.csv">LibB-231017-DMSO_bio2-1_C7_bio2-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_effects/by_selection/LibB-231017-DMSO_bio2-2_C7_bio2-1_func_effects.csv">LibB-231017-DMSO_bio2-2_C7_bio2-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_effects/by_selection/LibB-231017-DMSO_bio1-1_4u8c_bio1-1_func_effects.csv">LibB-231017-DMSO_bio1-1_4u8c_bio1-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_effects/by_selection/LibB-231017-DMSO_bio1-2_4u8c_bio1-1_func_effects.csv">LibB-231017-DMSO_bio1-2_4u8c_bio1-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_effects/by_selection/LibB-231017-DMSO_bio2-1_4u8c_bio2-1_func_effects.csv">LibB-231017-DMSO_bio2-1_4u8c_bio2-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_effects/by_selection/LibB-231017-DMSO_bio2-1_4u8c_bio2-2_func_effects.csv">LibB-231017-DMSO_bio2-1_4u8c_bio2-2</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_effects/by_selection/LibB-231017-DMSO_bio2-2_4u8c_bio2-1_func_effects.csv">LibB-231017-DMSO_bio2-2_4u8c_bio2-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_effects/by_selection/LibB-231017-DMSO_bio2-2_4u8c_bio2-2_func_effects.csv">LibB-231017-DMSO_bio2-2_4u8c_bio2-2</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_effects/by_selection/LibB-231017-DMSO_bio1-1_Both_bio1-1_func_effects.csv">LibB-231017-DMSO_bio1-1_Both_bio1-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_effects/by_selection/LibB-231017-DMSO_bio1-2_Both_bio1-1_func_effects.csv">LibB-231017-DMSO_bio1-2_Both_bio1-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_effects/by_selection/LibB-231017-DMSO_bio2-1_Both_bio2-1_func_effects.csv">LibB-231017-DMSO_bio2-1_Both_bio2-1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_effects/by_selection/LibB-231017-DMSO_bio2-2_Both_bio2-1_func_effects.csv">LibB-231017-DMSO_bio2-2_Both_bio2-1</a></li>
+</ul></details>
+
+</li>
+<li><details><summary>Average mutation functional effects (CSV files) (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_effects/averages/Ceapin_biorep1_DMSO_biorep1_func_effects.csv">Ceapin_biorep1_DMSO_biorep1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_effects/averages/Ceapin_biorep2_DMSO_biorep2_func_effects.csv">Ceapin_biorep2_DMSO_biorep2</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_effects/averages/4u8c_biorep1_DMSO_biorep1_func_effects.csv">4u8c_biorep1_DMSO_biorep1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_effects/averages/4u8c_biorep2_DMSO_biorep2_func_effects.csv">4u8c_biorep2_DMSO_biorep2</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_effects/averages/Both_biorep1_DMSO_biorep1_func_effects.csv">Both_biorep1_DMSO_biorep1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_effects/averages/Both_biorep2_DMSO_biorep2_func_effects.csv">Both_biorep2_DMSO_biorep2</a></li>
+</ul></details>
+
+</li>
+<li><details><summary>Average mutation latent-phenotype effects (CSV files) (click triangle to expand/collapse)</summary><ul>
+
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_effects/averages/Ceapin_biorep1_DMSO_biorep1_func_effects.csv">Ceapin_biorep1_DMSO_biorep1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_effects/averages/Ceapin_biorep2_DMSO_biorep2_func_effects.csv">Ceapin_biorep2_DMSO_biorep2</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_effects/averages/4u8c_biorep1_DMSO_biorep1_func_effects.csv">4u8c_biorep1_DMSO_biorep1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_effects/averages/4u8c_biorep2_DMSO_biorep2_func_effects.csv">4u8c_biorep2_DMSO_biorep2</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_effects/averages/Both_biorep1_DMSO_biorep1_func_effects.csv">Both_biorep1_DMSO_biorep1</a></li>
+<li><a href="https://github.com/kwalcott97/kw_dms/blob/main/results/func_effects/averages/Both_biorep2_DMSO_biorep2_func_effects.csv">Both_biorep2_DMSO_biorep2</a></li>
+</ul></details>
+
+</li>
+</ul>
