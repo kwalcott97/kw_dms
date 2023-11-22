@@ -41,87 +41,146 @@ global_epistasis_params: &global_epistasis_params
 #  - `func_score_params`: parameters for computing functional scores
 #  - `global_epistasis_params`: parameters for fitting global epistasis model
 func_scores:
-  LibB-231017-DMSO_bio1-1_C7_bio1-1:
-    post_selection_sample: LibB-231017-C7_bio1-1
-    pre_selection_sample: LibB-231017-DMSO_bio1-1
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-  LibB-231017-DMSO_bio1-1_C7_bio1-2:
+  C7_B1T2-vs-B1T1:
     post_selection_sample: LibB-231017-C7_bio1-2
     pre_selection_sample: LibB-231017-DMSO_bio1-1
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  LibB-231017-DMSO_bio1-2_C7_bio1-1:
-    post_selection_sample: LibB-231017-C7_bio1-1
-    pre_selection_sample: LibB-231017-DMSO_bio1-2
+  C7_B2T1-vs-B1T1:
+    post_selection_sample: LibB-231017-C7_bio2-1
+    pre_selection_sample: LibB-231017-DMSO_bio1-1
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  LibB-231017-DMSO_bio1-2_C7_bio1-2:
+  4u8c_B1T1-vs-B1T1:
+    post_selection_sample: LibB-231017-4u8c_bio1-1
+    pre_selection_sample: LibB-231017-DMSO_bio1-1
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  4u8c_B2T1-vs-B1T1:
+    post_selection_sample: LibB-231017-4u8c_bio2-1
+    pre_selection_sample: LibB-231017-DMSO_bio1-1
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  4u8c_B2T2-vs-B1T1:
+    post_selection_sample: LibB-231017-4u8c_bio2-2
+    pre_selection_sample: LibB-231017-DMSO_bio1-1
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  Both_B1T1-vs-B1T1:
+    post_selection_sample: LibB-231017-Both_bio1-1
+    pre_selection_sample: LibB-231017-DMSO_bio1-1
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  Both_B2T1-vs-B1T1:
+    post_selection_sample: LibB-231017-Both_bio2-1
+    pre_selection_sample: LibB-231017-DMSO_bio1-1
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  C7_B1T2-vs-B1T2:
     post_selection_sample: LibB-231017-C7_bio1-2
     pre_selection_sample: LibB-231017-DMSO_bio1-2
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  LibB-231017-DMSO_bio2-1_C7_bio2-1:
+  C7_B2T1-vs-B1T2:
     post_selection_sample: LibB-231017-C7_bio2-1
-    pre_selection_sample: LibB-231017-DMSO_bio2-1
+    pre_selection_sample: LibB-231017-DMSO_bio1-2
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  LibB-231017-DMSO_bio2-2_C7_bio2-1:
-    post_selection_sample: LibB-231017-C7_bio2-1
-    pre_selection_sample: LibB-231017-DMSO_bio2-2
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-  LibB-231017-DMSO_bio1-1_4u8c_bio1-1:
-    post_selection_sample: LibB-231017-4u8c_bio1-1
-    pre_selection_sample: LibB-231017-DMSO_bio1-1
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-  LibB-231017-DMSO_bio1-2_4u8c_bio1-1:
+  4u8c_B1T1-vs-B1T2:
     post_selection_sample: LibB-231017-4u8c_bio1-1
     pre_selection_sample: LibB-231017-DMSO_bio1-2
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  LibB-231017-DMSO_bio2-1_4u8c_bio2-1:
+  4u8c_B2T1-vs-B1T2:
     post_selection_sample: LibB-231017-4u8c_bio2-1
-    pre_selection_sample: LibB-231017-DMSO_bio2-1
+    pre_selection_sample: LibB-231017-DMSO_bio1-2
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  LibB-231017-DMSO_bio2-1_4u8c_bio2-2:
+  4u8c_B2T2-vs-B1T2:
     post_selection_sample: LibB-231017-4u8c_bio2-2
-    pre_selection_sample: LibB-231017-DMSO_bio2-1
+    pre_selection_sample: LibB-231017-DMSO_bio1-2
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  LibB-231017-DMSO_bio2-2_4u8c_bio2-1:
-    post_selection_sample: LibB-231017-4u8c_bio2-1
-    pre_selection_sample: LibB-231017-DMSO_bio2-2
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-  LibB-231017-DMSO_bio2-2_4u8c_bio2-2:
-    post_selection_sample: LibB-231017-4u8c_bio2-2
-    pre_selection_sample: LibB-231017-DMSO_bio2-2
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-  LibB-231017-DMSO_bio1-1_Both_bio1-1:
-    post_selection_sample: LibB-231017-Both_bio1-1
-    pre_selection_sample: LibB-231017-DMSO_bio1-1
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-  LibB-231017-DMSO_bio1-2_Both_bio1-1:
+  Both_B1T1-vs-B1T2:
     post_selection_sample: LibB-231017-Both_bio1-1
     pre_selection_sample: LibB-231017-DMSO_bio1-2
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  LibB-231017-DMSO_bio2-1_Both_bio2-1:
+  Both_B2T1-vs-B1T2:
+    post_selection_sample: LibB-231017-Both_bio2-1
+    pre_selection_sample: LibB-231017-DMSO_bio1-2
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  C7_B1T2-vs-B2T1:
+    post_selection_sample: LibB-231017-C7_bio1-2
+    pre_selection_sample: LibB-231017-DMSO_bio2-1
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  C7_B2T1-vs-B2T1:
+    post_selection_sample: LibB-231017-C7_bio2-1
+    pre_selection_sample: LibB-231017-DMSO_bio2-1
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  4u8c_B1T1-vs-B2T1:
+    post_selection_sample: LibB-231017-4u8c_bio1-1
+    pre_selection_sample: LibB-231017-DMSO_bio2-1
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  4u8c_B2T1-vs-B2T1:
+    post_selection_sample: LibB-231017-4u8c_bio2-1
+    pre_selection_sample: LibB-231017-DMSO_bio2-1
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  4u8c_B2T2-vs-B2T1:
+    post_selection_sample: LibB-231017-4u8c_bio2-2
+    pre_selection_sample: LibB-231017-DMSO_bio2-1
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  Both_B1T1-vs-B2T1:
+    post_selection_sample: LibB-231017-Both_bio1-1
+    pre_selection_sample: LibB-231017-DMSO_bio2-1
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  Both_B2T1-vs-B2T1:
     post_selection_sample: LibB-231017-Both_bio2-1
     pre_selection_sample: LibB-231017-DMSO_bio2-1
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  LibB-231017-DMSO_bio2-2_Both_bio2-1:
+  C7_B1T2-vs-B2T2:
+    post_selection_sample: LibB-231017-C7_bio1-2
+    pre_selection_sample: LibB-231017-DMSO_bio2-2
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  C7_B2T1-vs-B2T2:
+    post_selection_sample: LibB-231017-C7_bio2-1
+    pre_selection_sample: LibB-231017-DMSO_bio2-2
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  4u8c_B1T1-vs-B2T2:
+    post_selection_sample: LibB-231017-4u8c_bio1-1
+    pre_selection_sample: LibB-231017-DMSO_bio2-2
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  4u8c_B2T1-vs-B2T2:
+    post_selection_sample: LibB-231017-4u8c_bio2-1
+    pre_selection_sample: LibB-231017-DMSO_bio2-2
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  4u8c_B2T2-vs-B2T2:
+    post_selection_sample: LibB-231017-4u8c_bio2-2
+    pre_selection_sample: LibB-231017-DMSO_bio2-2
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  Both_B1T1-vs-B2T2:
+    post_selection_sample: LibB-231017-Both_bio1-1
+    pre_selection_sample: LibB-231017-DMSO_bio2-2
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  Both_B2T1-vs-B2T2:
     post_selection_sample: LibB-231017-Both_bio2-1
     pre_selection_sample: LibB-231017-DMSO_bio2-2
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  
 
 # --------------------------------------------------------------------------------------
 # Configuration for averaging mutation functional effects across selections and plotting
@@ -182,46 +241,48 @@ avg_func_effects_default: &avg_func_effects_default
 
 # Define the functional effect conditions to average
 avg_func_effects:
-  Ceapin_biorep1_DMSO_biorep1:
+  C7_B1T2-vs-B1T1_+_C7_B2T1-vs-B2T1:
     <<: *avg_func_effects_default
-    title: n/a
+    title: Comparing biological replicates of Ceapin-A7 and DMSO using tech rep 1 from DMSO
     selections:
-      - LibB-231017-DMSO_bio1-1_C7_bio1-1
-      - LibB-231017-DMSO_bio1-1_C7_bio1-2
-      - LibB-231017-DMSO_bio1-2_C7_bio1-1
-      - LibB-231017-DMSO_bio1-2_C7_bio1-2
-  Ceapin_biorep2_DMSO_biorep2:
+      - C7_B1T2-vs-B1T1
+      - C7_B2T1-vs-B2T1
+  C7_B1T2-vs-B1T2_+_C7_B2T1-vs-B2T2:
     <<: *avg_func_effects_default
-    title: n/a
+    title: Comparing biological replicates of Ceapin-A7 and DMSO using tech rep 2 from DMSO
     selections:
-      - LibB-231017-DMSO_bio2-1_C7_bio2-1
-      - LibB-231017-DMSO_bio2-2_C7_bio2-1
-  4u8c_biorep1_DMSO_biorep1:
+      - C7_B1T2-vs-B1T2
+      - C7_B2T1-vs-B2T2
+  4u8c_B2T1-vs-B1T1_+_4u8c_B2T2-vs-B1T2:
     <<: *avg_func_effects_default
-    title: n/a
+    title: Comparing technical replicates of 4u8c and DMSO biorep 2
     selections:
-      - LibB-231017-DMSO_bio1-1_4u8c_bio1-1
-      - LibB-231017-DMSO_bio1-2_4u8c_bio1-1
-  4u8c_biorep2_DMSO_biorep2:
+      - 4u8c_B2T1-vs-B1T1
+      - 4u8c_B2T2-vs-B1T2
+  4u8c_B1T1-vs-B1T1_+_4u8c_B2T1-vs-B2T1:
     <<: *avg_func_effects_default
-    title: n/a
+    title: Comparing biological replicates of 4u8C and DMSO using techrep 1 from both conditions
     selections:
-      - LibB-231017-DMSO_bio2-1_4u8c_bio2-1
-      - LibB-231017-DMSO_bio2-1_4u8c_bio2-2
-      - LibB-231017-DMSO_bio2-2_4u8c_bio2-1
-      - LibB-231017-DMSO_bio2-2_4u8c_bio2-2
-  Both_biorep1_DMSO_biorep1:
+      - 4u8c_B1T1-vs-B1T1
+      - 4u8c_B2T1-vs-B2T1
+  4u8c_B1T1-vs-B1T2_+_4u8c_B2T1-vs-B2T2:
     <<: *avg_func_effects_default
-    title: n/a
+    title: Comparing biological replicates of 4u8C and DMSO using techrep 2 from both conditions
     selections:
-      - LibB-231017-DMSO_bio1-1_Both_bio1-1
-      - LibB-231017-DMSO_bio1-2_Both_bio1-1
-  Both_biorep2_DMSO_biorep2:
+      - 4u8c_B1T1-vs-B1T2
+      - 4u8c_B2T1-vs-B2T2
+  Both_B1T1-vs-B1T1_+_Both_B2T1-vs-B2T1:
     <<: *avg_func_effects_default
-    title: n/a
+    title: Comparing biological replicates of both drugs and DMSO using tech rep 1 from DMSO
     selections:
-      - LibB-231017-DMSO_bio2-1_Both_bio2-1
-      - LibB-231017-DMSO_bio2-2_Both_bio2-1
+      - Both_B1T1-vs-B1T1
+      - Both_B2T1-vs-B2T1
+  Both_B1T1-vs-B1T2_+_Both_B2T1-vs-B2T2:
+    <<: *avg_func_effects_default
+    title: Comparing biological replicates of both drugs and DMSO using tech rep 2 from DMSO
+    selections:
+      - Both_B1T1-vs-B1T2
+      - Both_B2T1-vs-B2T2
 
 # --------------------------------------------------------------------------------------
 # Configuration for func effect shifts from `multidms` models comparing conditions.
@@ -311,3 +372,5 @@ avg_func_effect_shifts_default: &avg_func_effect_shifts_default
 
 # Define the functional effect conditions to average
 avg_func_effect_shifts: null
+
+

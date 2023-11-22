@@ -72,19 +72,7 @@ prebuilt_geneseq: data/codon.fasta
 pacbio_runs: null # PacBio sequencing data
 pacbio_amplicon: null # Genbank file with PacBio amplicon
 pacbio_amplicon_specs: null # alignparse feature parsing
-<<<<<<< HEAD
 variant_tags: null # variant tags in PacBio amplicon, or "null" if no tags
-=======
-variant_tags:  # variant tags in PacBio amplicon, or "null" if no tags
->>>>>>> 19ee6d1 (ran the pipeline)
-  variant_tag5:
-    variant_1: G
-    variant_2: C
-    wildtype: A
-  variant_tag3:
-    variant_1: G
-    variant_2: C
-    wildtype: A
 max_ccs_error_rate: 1.0e-4  # only keep CCS if gene/barcode error rate <= this
 consensus_params:  # parameters for building PacBio consensus sequences
   max_sub_diffs: null
@@ -122,9 +110,4 @@ illumina_barcode_parser_params:
 # of analysis. Otherwise provide path to configuration for that analysis.
 
 func_effects_config: data/func_effects_config.yml  # Functional effects of mutations
-antibody_escape_config: null  # escape assays (eg, antibodies)
-<<<<<<< HEAD
-summaries_config: data/summaries_config.yml  # Summaries across assays
-=======
 summaries_config: null  # Summaries across assays
->>>>>>> 19ee6d1 (ran the pipeline)
