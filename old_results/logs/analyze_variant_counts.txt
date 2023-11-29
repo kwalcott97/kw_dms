@@ -1,0 +1,12 @@
+Input Notebook:  dms-vep-pipeline-3/notebooks/analyze_variant_counts.ipynb
+Output Notebook: results/notebooks/analyze_variant_counts.ipynb
+Executing:   0%|          | 0/25 [00:00<?, ?cell/s]0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+Executing notebook with kernel: python3
+Executing:   4%|▍         | 1/25 [00:01<00:27,  1.14s/cell]Executing:   8%|▊         | 2/25 [00:01<00:17,  1.32cell/s]Executing:  28%|██▊       | 7/25 [00:19<00:55,  3.07s/cell]Executing:  44%|████▍     | 11/25 [00:21<00:24,  1.78s/cell]Executing:  52%|█████▏    | 13/25 [00:24<00:20,  1.75s/cell]Executing:  60%|██████    | 15/25 [00:25<00:13,  1.37s/cell]Executing:  68%|██████▊   | 17/25 [00:25<00:08,  1.02s/cell]Executing:  76%|███████▌  | 19/25 [00:25<00:04,  1.25cell/s]Executing:  84%|████████▍ | 21/25 [00:32<00:05,  1.47s/cell]Executing:  92%|█████████▏| 23/25 [00:43<00:05,  2.63s/cell]Executing: 100%|██████████| 25/25 [00:43<00:00,  1.87s/cell]Executing: 100%|██████████| 25/25 [00:43<00:00,  1.75s/cell]

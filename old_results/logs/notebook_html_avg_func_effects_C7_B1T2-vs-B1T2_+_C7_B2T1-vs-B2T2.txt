@@ -1,0 +1,2 @@
+[NbConvertApp] Converting notebook results/notebooks/avg_func_effects_C7_B1T2-vs-B1T2_+_C7_B2T1-vs-B2T2.ipynb to html
+[NbConvertApp] Writing 10413150 bytes to docs/notebooks/avg_func_effects_C7_B1T2-vs-B1T2_+_C7_B2T1-vs-B2T2.html

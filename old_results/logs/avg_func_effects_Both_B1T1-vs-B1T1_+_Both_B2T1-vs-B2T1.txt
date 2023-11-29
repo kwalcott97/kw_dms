@@ -1,0 +1,12 @@
+Input Notebook:  dms-vep-pipeline-3/notebooks/avg_func_effects.ipynb
+Output Notebook: results/notebooks/avg_func_effects_Both_B1T1-vs-B1T1_+_Both_B2T1-vs-B2T1.ipynb
+Executing:   0%|          | 0/18 [00:00<?, ?cell/s]0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+0.00s - Debugger warning: It seems that frozen modules are being used, which may
+0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off
+0.00s - to python to disable frozen modules.
+0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.
+Executing notebook with kernel: python3
+Executing:   6%|▌         | 1/18 [00:01<00:19,  1.14s/cell]Executing:  11%|█         | 2/18 [00:01<00:15,  1.04cell/s]Executing:  44%|████▍     | 8/18 [00:02<00:01,  5.76cell/s]Executing:  61%|██████    | 11/18 [00:02<00:01,  5.28cell/s]Executing:  83%|████████▎ | 15/18 [00:03<00:00,  6.48cell/s]Executing:  94%|█████████▍| 17/18 [00:06<00:00,  1.98cell/s]Executing: 100%|██████████| 18/18 [00:07<00:00,  2.55cell/s]

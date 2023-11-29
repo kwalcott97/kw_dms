@@ -1,0 +1,26 @@
+Computing functional scores for selection=C7_B2T1-vs-B1T2
+
+These samples are for library='LibB'
+
+Getting pre_selection_sample barcode counts from results/barcode_counts/LibB-231017-DMSO_bio1-2_counts.csv
+
+Getting post_selection_sample barcode counts from results/barcode_counts/LibB-231017-C7_bio2-1_counts.csv
+
+Using pseudocount 0.5
+Requiring at least 29325.286 total wildtype counts for pre_count, which is the greater of min_wt_count=1000 and min_wt_frac=0.001 of the 29325286 total counts.
+
+Adequate pre_count wildtype counts of 6675506
+
+Requiring at least 29745.99 total wildtype counts for post_count, which is the greater of min_wt_count=1000 and min_wt_frac=0.001 of the 29745990 total counts.
+
+Adequate post_count wildtype counts of 6752821
+
+Only keeping scores for variants with at least 58.650572 pre-selection counts:
+                                 n_variants
+sufficient_pre_selection_counts            
+False                                 69904
+True                                  70747
+
+Writing summary counts to results/func_scores/C7_B2T1-vs-B1T2_count_summary.csv
+
+Writing functional scores to results/func_scores/C7_B2T1-vs-B1T2_func_scores.csv

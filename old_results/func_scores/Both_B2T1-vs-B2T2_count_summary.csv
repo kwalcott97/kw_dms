@@ -1,0 +1,2 @@
+selection,library,pre_selection_sample,post_selection_sample,pre_selection_date,post_selection_date,min_pre_selection_count,pre_count_median,pre_count_q1,pre_count_q3,pre_count_min,pre_count_max,post_count_median,post_count_q1,post_count_q3,post_count_min,post_count_max
+Both_B2T1-vs-B2T2,LibB,LibB-231017-DMSO_bio2-2,LibB-231017-Both_bio2-1,2023-10-17,2023-10-17,25,57.0,0.0,238.0,0,17388,6.0,0.0,231.0,0,15591
