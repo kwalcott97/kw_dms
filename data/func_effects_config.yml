@@ -181,6 +181,26 @@ func_scores:
     pre_selection_sample: LibB-231017-DMSO_bio2-2
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
+  Lib1-230614_high_ACE2:
+    pre_selection_sample: Lib1-230614-VSVG_control_293T
+    post_selection_sample: Lib1-230614-no-antibody_control_highACE2
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  Lib2-230614_high_ACE2:
+    pre_selection_sample: Lib2-230614-VSVG_control_293T
+    post_selection_sample: Lib2-230614-no-antibody_control_highACE2
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  Lib1-230614_medium_ACE2:
+    pre_selection_sample: Lib1-230614-VSVG_control_293T
+    post_selection_sample: Lib1-230614-no-antibody_control_mediumACE2
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
+  Lib2-230614_medium_ACE2:
+    pre_selection_sample: Lib2-230614-VSVG_control_293T
+    post_selection_sample: Lib2-230614-no-antibody_control_mediumACE2
+    func_score_params: *func_scores_params_default
+    global_epistasis_params: *global_epistasis_params
 
 # --------------------------------------------------------------------------------------
 # Configuration for averaging mutation functional effects across selections and plotting
