@@ -15,9 +15,9 @@ func_scores_params_default: &func_scores_params_default
   min_wt_frac: 0.001  # error if not at least this fraction of counts for wildtype
   # `min_pre_selection_count` and `min_pre_selection_frac` drop variants with low counts
   # or frequencies that may not have sufficient statistics for good estimates.
-  min_pre_selection_count: 1  # drop variants < this many pre-selection counts
+  min_pre_selection_count: 25  # drop variants < this many pre-selection counts
   # !!! Make min_pre_selection_frac LARGER for larger libraries, such 0.1 / (library size) !!!
-  min_pre_selection_frac: 0.000000000000001  # drop variants that are < this fraction of all counts
+  min_pre_selection_frac: 0.0000001  # drop variants that are < this fraction of all counts
 
 # Define default parameters for fitting global epistasis models to each
 # individual selection to get mutation effects.
@@ -41,167 +41,62 @@ global_epistasis_params: &global_epistasis_params
 #  - `func_score_params`: parameters for computing functional scores
 #  - `global_epistasis_params`: parameters for fitting global epistasis model
 func_scores:
-  C7_B1T2-vs-B1T1:
-    post_selection_sample: LibB-231017-C7_bio1-2
-    pre_selection_sample: LibB-231017-DMSO_bio1-1
+  LibA-230614_high_ACE2:
+    pre_selection_sample: LibA-230614-VSVG_control_293T
+    post_selection_sample: LibA-230614-no-antibody_control_highACE2
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  C7_B2T1-vs-B1T1:
-    post_selection_sample: LibB-231017-C7_bio2-1
-    pre_selection_sample: LibB-231017-DMSO_bio1-1
+  LibA-230614_medium_ACE2:
+    pre_selection_sample: LibA-230614-VSVG_control_293T
+    post_selection_sample: LibA-230614-no-antibody_control_mediumACE2
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  4u8c_B1T1-vs-B1T1:
-    post_selection_sample: LibB-231017-4u8c_bio1-1
-    pre_selection_sample: LibB-231017-DMSO_bio1-1
+  LibA-230720_high_ACE2:
+    pre_selection_sample: LibA-230614-VSVG_control_293T
+    post_selection_sample: LibA-230720-no-antibody_control_highACE2
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  4u8c_B2T1-vs-B1T1:
-    post_selection_sample: LibB-231017-4u8c_bio2-1
-    pre_selection_sample: LibB-231017-DMSO_bio1-1
+  LibA-230729_high_ACE2:
+    pre_selection_sample: LibA-230614-VSVG_control_293T
+    post_selection_sample: LibA-230729-no-antibody_control_highACE2
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  4u8c_B2T2-vs-B1T1:
-    post_selection_sample: LibB-231017-4u8c_bio2-2
-    pre_selection_sample: LibB-231017-DMSO_bio1-1
+  LibA-230805_medium_ACE2:
+    pre_selection_sample: LibA-230614-VSVG_control_293T
+    post_selection_sample: LibA-230805-no-antibody-control_mediumACE2
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  Both_B1T1-vs-B1T1:
-    post_selection_sample: LibB-231017-Both_bio1-1
-    pre_selection_sample: LibB-231017-DMSO_bio1-1
+  LibA-230815_medium_ACE2:
+    pre_selection_sample: LibA-230614-VSVG_control_293T
+    post_selection_sample: LibA-230815-no-antibody_control_mediumACE2
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  Both_B2T1-vs-B1T1:
-    post_selection_sample: LibB-231017-Both_bio2-1
-    pre_selection_sample: LibB-231017-DMSO_bio1-1
+  LibB-230614_high_ACE2:
+    pre_selection_sample: LibB-230614-VSVG_control_293T
+    post_selection_sample: LibB-230614-no-antibody_control_highACE2
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  C7_B1T2-vs-B1T2:
-    post_selection_sample: LibB-231017-C7_bio1-2
-    pre_selection_sample: LibB-231017-DMSO_bio1-2
+  LibB-230614_medium_ACE2:
+    pre_selection_sample: LibB-230614-VSVG_control_293T
+    post_selection_sample: LibB-230614-no-antibody_control_mediumACE2
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  C7_B2T1-vs-B1T2:
-    post_selection_sample: LibB-231017-C7_bio2-1
-    pre_selection_sample: LibB-231017-DMSO_bio1-2
+  LibB-230720_high_ACE2:
+    pre_selection_sample: LibB-230614-VSVG_control_293T
+    post_selection_sample: LibB-230720-no-antibody_control_highACE2
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  4u8c_B1T1-vs-B1T2:
-    post_selection_sample: LibB-231017-4u8c_bio1-1
-    pre_selection_sample: LibB-231017-DMSO_bio1-2
+  LibB-230805_medium_ACE2:
+    pre_selection_sample: LibB-230614-VSVG_control_293T
+    post_selection_sample: LibB-230805-no-antibody-control_mediumACE2
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  4u8c_B2T1-vs-B1T2:
-    post_selection_sample: LibB-231017-4u8c_bio2-1
-    pre_selection_sample: LibB-231017-DMSO_bio1-2
+  LibB-230815_medium_ACE2:
+    pre_selection_sample: LibB-230614-VSVG_control_293T
+    post_selection_sample: LibB-230815-no-antibody_control_mediumACE2
     func_score_params: *func_scores_params_default
     global_epistasis_params: *global_epistasis_params
-  4u8c_B2T2-vs-B1T2:
-    post_selection_sample: LibB-231017-4u8c_bio2-2
-    pre_selection_sample: LibB-231017-DMSO_bio1-2
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-  Both_B1T1-vs-B1T2:
-    post_selection_sample: LibB-231017-Both_bio1-1
-    pre_selection_sample: LibB-231017-DMSO_bio1-2
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-  Both_B2T1-vs-B1T2:
-    post_selection_sample: LibB-231017-Both_bio2-1
-    pre_selection_sample: LibB-231017-DMSO_bio1-2
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-  C7_B1T2-vs-B2T1:
-    post_selection_sample: LibB-231017-C7_bio1-2
-    pre_selection_sample: LibB-231017-DMSO_bio2-1
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-  C7_B2T1-vs-B2T1:
-    post_selection_sample: LibB-231017-C7_bio2-1
-    pre_selection_sample: LibB-231017-DMSO_bio2-1
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-  4u8c_B1T1-vs-B2T1:
-    post_selection_sample: LibB-231017-4u8c_bio1-1
-    pre_selection_sample: LibB-231017-DMSO_bio2-1
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-  4u8c_B2T1-vs-B2T1:
-    post_selection_sample: LibB-231017-4u8c_bio2-1
-    pre_selection_sample: LibB-231017-DMSO_bio2-1
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-  4u8c_B2T2-vs-B2T1:
-    post_selection_sample: LibB-231017-4u8c_bio2-2
-    pre_selection_sample: LibB-231017-DMSO_bio2-1
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-  Both_B1T1-vs-B2T1:
-    post_selection_sample: LibB-231017-Both_bio1-1
-    pre_selection_sample: LibB-231017-DMSO_bio2-1
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-  Both_B2T1-vs-B2T1:
-    post_selection_sample: LibB-231017-Both_bio2-1
-    pre_selection_sample: LibB-231017-DMSO_bio2-1
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-  C7_B1T2-vs-B2T2:
-    post_selection_sample: LibB-231017-C7_bio1-2
-    pre_selection_sample: LibB-231017-DMSO_bio2-2
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-  C7_B2T1-vs-B2T2:
-    post_selection_sample: LibB-231017-C7_bio2-1
-    pre_selection_sample: LibB-231017-DMSO_bio2-2
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-  4u8c_B1T1-vs-B2T2:
-    post_selection_sample: LibB-231017-4u8c_bio1-1
-    pre_selection_sample: LibB-231017-DMSO_bio2-2
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-  4u8c_B2T1-vs-B2T2:
-    post_selection_sample: LibB-231017-4u8c_bio2-1
-    pre_selection_sample: LibB-231017-DMSO_bio2-2
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-  4u8c_B2T2-vs-B2T2:
-    post_selection_sample: LibB-231017-4u8c_bio2-2
-    pre_selection_sample: LibB-231017-DMSO_bio2-2
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-  Both_B1T1-vs-B2T2:
-    post_selection_sample: LibB-231017-Both_bio1-1
-    pre_selection_sample: LibB-231017-DMSO_bio2-2
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-  Both_B2T1-vs-B2T2:
-    post_selection_sample: LibB-231017-Both_bio2-1
-    pre_selection_sample: LibB-231017-DMSO_bio2-2
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-  Lib1-230614_high_ACE2:
-    pre_selection_sample: Lib1-230614-VSVG_control_293T
-    post_selection_sample: Lib1-230614-no-antibody_control_highACE2
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-  Lib2-230614_high_ACE2:
-    pre_selection_sample: Lib2-230614-VSVG_control_293T
-    post_selection_sample: Lib2-230614-no-antibody_control_highACE2
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-  Lib1-230614_medium_ACE2:
-    pre_selection_sample: Lib1-230614-VSVG_control_293T
-    post_selection_sample: Lib1-230614-no-antibody_control_mediumACE2
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-  Lib2-230614_medium_ACE2:
-    pre_selection_sample: Lib2-230614-VSVG_control_293T
-    post_selection_sample: Lib2-230614-no-antibody_control_mediumACE2
-    func_score_params: *func_scores_params_default
-    global_epistasis_params: *global_epistasis_params
-
+  
 # --------------------------------------------------------------------------------------
 # Configuration for averaging mutation functional effects across selections and plotting
 # them.
